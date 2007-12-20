@@ -43,14 +43,15 @@ rm -fr %buildroot
 %makeinstall
 
 # Menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat >$RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): command="%{_bindir}/quicklist" \
-needs="X11" \
-section="Office/Tasks Management" \
-title="Quicklist" \
-longtitle="Keep track of things" \
-icon="taskmanagement_section.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/quicklist
+Categories=Office;ProjectManagement;
+Name=Quicklist
+Comment=Keep track of things
+Icon=taskmanagement_section
 EOF
 
 cd gtksheet; make clean; cd ..
@@ -71,6 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING 
 %doc doc/f* gtksheet
 %{_bindir}/*
-%_menudir/*
+%{_datadir}/applications/mandriva-*.desktop
 
 
