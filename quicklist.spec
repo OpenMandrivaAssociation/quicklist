@@ -6,6 +6,7 @@ Release:	%mkrel 5
 Source:		%{name}-%{version}.tar.bz2
 Group:		Office
 URL:		http://www.quicklist.org/
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPL
 BuildRequires: gtk-devel
 
