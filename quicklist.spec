@@ -8,6 +8,11 @@ Group:		Office
 URL:		https://www.quicklist.org/
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPL
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: gtk-devel
 
 %description
