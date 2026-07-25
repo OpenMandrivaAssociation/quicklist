@@ -1,7 +1,7 @@
 Name:		quicklist
 Summary:	Keep track of "things"
 Version:	0.8.6
-Release:	%mkrel 9
+Release:	10
 
 Source:		%{name}-%{version}.tar.bz2
 Group:		Office
